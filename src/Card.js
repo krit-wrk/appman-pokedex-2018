@@ -14,7 +14,7 @@ export function Card(props) {
                     <label>HP:{calHP(c)}</label>
                     <label>Strength:{calStrength(c)}</label>
                     <label>Weakness:{calWeakness(c)}</label>
-                    <label>calDamage:{calDamage(c)}</label>
+                    {/* <label>calDamage:{calDamage(c)}</label> */}
                     <label>Happiness: {calHappiness(c)}</label>
                     <button onClick={_ => props.action(c)}>{props.btnDisplay}</button>
                 </Col>
