@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   /*font-family: sans-serif;*/
-  font-family: 'Atma', cursive;
+  font-family: "Atma", cursive;
 }
 
 #root {
@@ -14,6 +14,7 @@ body {
   border-width: 28px 103px 28px 74px;
   border-style: solid;
   position: relative;
+  display: flex;
 }
 
 #root:before {
@@ -21,7 +22,8 @@ body {
   position: absolute;
   left: -80px;
   transform: rotate(270deg);
-  background: url(https://cdn-images-1.medium.com/fit/c/200/200/1*PKHCHuLxDyZ8SV3PKxzizA.png) no-repeat center center / 100%;
+  background: url(https://cdn-images-1.medium.com/fit/c/200/200/1*PKHCHuLxDyZ8SV3PKxzizA.png)
+    no-repeat center center / 100%;
   width: 85px;
   height: 180px;
   top: 40%;

@@ -1,27 +1,29 @@
-import React, { Component } from 'react'
-import './App.css'
+import React from 'react'
+import { Card } from './components'
+import styles from './style'
 
-const COLORS = {
-  Psychic: "#f8a5c2",
-  Fighting: "#f0932b",
-  Fairy: "#c44569",
-  Normal: "#f6e58d",
-  Grass: "#badc58",
-  Metal: "#95afc0",
-  Water: "#3dc1d3",
-  Lightning: "#f9ca24",
-  Darkness: "#574b90",
-  Colorless: "#FFF",
-  Fire: "#eb4d4b"
-}
+const App = () => {
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
+  return (
+    <div style={styles.app} >
+      <div style={styles.titleContainer} >
+        My Pokedex
       </div>
-    )
-  }
+      <div style={styles.dexContainer}>
+        <div style={styles.card}>
+          <Card
+            name="Deoxys ex"
+            happy={3}
+            hp={30}
+            image={"https://images.pokemontcg.io/ex8/98.png"}
+            str={40}
+            weak={60} />
+        </div>
+      </div>
+
+    </div>
+  )
+
 }
 
 export default App

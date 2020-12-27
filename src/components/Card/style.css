@@ -1,0 +1,6 @@
+.component-card {
+  box-shadow: 1px 1px 10px 1px #d5d6dc;
+}
+.component-card:hover {
+  box-shadow: 1px 1px 10px 1px #aeaeae;
+}
