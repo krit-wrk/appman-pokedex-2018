@@ -1,5 +1,6 @@
 import { COLORS } from './../../constants'
-const styles = {
+import { StyleSheet } from 'aphrodite'
+export default StyleSheet.create({
   container: {
     height: '20px',
     width: "100%",
@@ -13,5 +14,4 @@ const styles = {
     textAlign: "right",
     height: "100%",
   }
-}
-export default styles
+})

@@ -12,6 +12,8 @@ export const COLORS = {
     Fire: "#eb4d4b",
 
     CardBackground: "#f3f4f7",
+    CardShadow: " #d5d6dc",
+    CardShadowHover: "#aeaeae",
     BarBackground: "#e4e4e4",
     BarValue: '#f3701a',
     BarShadow: '#d4d4d4',

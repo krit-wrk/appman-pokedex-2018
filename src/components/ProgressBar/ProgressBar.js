@@ -1,10 +1,11 @@
 import React from 'react'
-import styles from './style.js'
+import style from './style.js'
+import { StyleSheet, css } from 'aphrodite'
 const ProgressBar = ({ value }) => {
-    const barStyles = { width: `${value}%` }
+    const valueStyle = StyleSheet.create({ bar: { width: `${value}%` } })
     return (
-        <div style={styles.container}>
-            <div style={{ ...styles.bar, ...barStyles }} />
+        <div className={css(style.container)}>
+            <div className={css(style.bar, valueStyle.bar)} />
         </div>
     );
 };

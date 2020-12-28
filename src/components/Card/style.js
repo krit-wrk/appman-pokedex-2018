@@ -1,11 +1,16 @@
 import { COLORS } from './../../constants'
-const styles = {
+import { StyleSheet } from 'aphrodite'
+export default StyleSheet.create({
   container: {
     display: 'flex',
     flexDirection: 'row',
     flex: 1,
     padding: '8px',
     backgroundColor: COLORS.CardBackground,
+    boxShadow: `1px 1px 10px 1px ${COLORS.CardShadow}`,
+    ":hover": {
+      boxShadow: `1px 1px 10px 1px ${COLORS.CardShadowHover}`
+    }
   },
 
   image: {
@@ -50,5 +55,4 @@ const styles = {
     padding: '2px'
   }
 
-}
-export default styles
+})
