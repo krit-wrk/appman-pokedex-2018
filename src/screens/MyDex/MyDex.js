@@ -5,11 +5,11 @@ import { css } from 'aphrodite'
 import { Modal } from "react-responsive-modal";
 const MyDex = () => {
     const [isOpen, setIsOpen] = React.useState(false);
-    const myRef = React.useRef(null);
+
 
     return (
         <div className={css(style.container)} >
-             <div ref={myRef} />
+
             <div onClick={() => setIsOpen(true)} className={css(style.titleContainer)} >
                 My Pokedex
       </div>
@@ -32,7 +32,7 @@ const MyDex = () => {
                 open={isOpen}
                 onClose={setIsOpen}
                 showCloseIcon={false}
-                container={myRef.current}
+
             >
                 <div className={css(style.card)}>
                     <Card
