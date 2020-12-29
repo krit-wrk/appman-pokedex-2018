@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { Card } from '../../components'
 import style from './style'
 import { css } from 'aphrodite'
@@ -6,33 +6,37 @@ import { Modal } from "react-responsive-modal";
 const MyDex = () => {
     const [isOpen, setIsOpen] = React.useState(false);
 
-
+    const list = useMemo(() => {
+        let l = []
+        for (let i = 0; i < 100; i++) {
+            l.push(<div className={css(style.card)}>
+                <Card
+                    name="Deoxys ex"
+                    happy={3}
+                    hp={30}
+                    image={"https://images.pokemontcg.io/ex8/98.png"}
+                    str={40}
+                    weak={90} />
+            </div>)
+        }
+        return l
+    }, [])
     return (
         <div className={css(style.container)} >
-
-            <div onClick={() => setIsOpen(true)} className={css(style.titleContainer)} >
-                My Pokedex
-      </div>
+            <div onClick={() => setIsOpen(true)} className={css(style.titleContainer)}>My Pokedex</div>
             <div className={css(style.dexContainer)}>
-                <div className={css(style.card)}>
-                    <Card
-                        name="Deoxys ex"
-                        happy={3}
-                        hp={30}
-                        image={"https://images.pokemontcg.io/ex8/98.png"}
-                        str={40}
-                        weak={90} />
-                </div>
+                {list}
+                
             </div>
+            <div className={css(style.footer)} >  <div className={css(style.add)} >+</div></div>
+
+
 
             <Modal
-                styles={{
-                    modal: { margin: 0, padding: 0 }
-                }}
+                styles={{ modal: { margin: 0, padding: 0 } }}
                 open={isOpen}
                 onClose={setIsOpen}
                 showCloseIcon={false}
-
             >
                 <div className={css(style.card)}>
                     <Card
@@ -41,7 +45,8 @@ const MyDex = () => {
                         hp={30}
                         image={"https://images.pokemontcg.io/ex8/98.png"}
                         str={40}
-                        weak={90} />
+                        weak={90}
+                    />
                 </div>
             </Modal>
 

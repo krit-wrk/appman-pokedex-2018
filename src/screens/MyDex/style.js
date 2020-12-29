@@ -1,19 +1,49 @@
 import { StyleSheet } from 'aphrodite'
+import { COLORS } from '../../constants'
 export default StyleSheet.create({
   container: {
-    flex: 1,
+    display: 'flex',
     flexDirection: 'column',
   },
   titleContainer: {
-    paddingTop: '16px',
+    height: '100px',
+    marginTop: '16px',
     fontSize: '50px',
     textAlign: 'center',
   },
   dexContainer: {
     display: 'flex',
-    flexDirection: 'row'
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    overflowX: 'scroll',
+  },
+  footer: {
+    display: "flex",
+    flexDirection: "row",
+    flex: 1,
+    height: "60px",
+    width: "100%",
+    bottom: 0,
+    backgroundColor: COLORS.BottomBarBackground,
+    justifyContent: 'center'
+
+  },
+  add: {
+    marginTop: "-40px",
+    height: "100px",
+    width: "100px",
+    borderRadius: "50px",
+    backgroundColor: COLORS.BottomBarBackground,
+    boxShadow: `inset 0 10px 5px -0px ${COLORS.BottomBarBoxShadow}`,
+    justifyContent: 'center',
+    textAlign: 'center',
+    fontSize: '60px',
+    color: COLORS.BottomBarTextColor,
+    zIndex: 100,
   },
   card: {
-    width: '50%',
+    width: '48%',
+    margin: "8px",
   }
 })

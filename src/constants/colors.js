@@ -17,5 +17,12 @@ export const COLORS = {
     BarBackground: "#e4e4e4",
     BarValue: '#f3701a',
     BarShadow: '#d4d4d4',
+    SearchBoxBorder: "#e6e6e6",
+    AddButton: "#dc7777",
+    BottomBarBackground: "#ec5656",
+    BottomBarBoxShadow: "#d9333387",
+    BottomBarTextColor: "#ffffff",
+    ModalContentBackground: "#ffffff",
+    ModalContentBoxShadow: "#474444"
 }
 
