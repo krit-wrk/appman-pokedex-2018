@@ -1,13 +1,15 @@
 .react-responsive-modal-overlay {
   width: 1024px;
   height: 768px;
-  margin-top: 78px;
-  margin-left: 74px;
+  margin: 50px auto;
+  border-color: rgba(255, 255, 255, 0);
+  border-radius: 40px;
+  border-width: 28px 103px 28px 74px;
+  border-style: solid;
 }
 
 .react-responsive-modal-container {
   width: 1024px;
   height: 768px;
-  margin-top: 78px;
-  margin-left: 74px;
+  margin: 78px auto;
 }
