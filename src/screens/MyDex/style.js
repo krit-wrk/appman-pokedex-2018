@@ -43,7 +43,7 @@ export default StyleSheet.create({
     zIndex: 100,
   },
   card: {
-    width: '48%',
-    margin: "8px",
+    width: '45%',
+    margin: "16px",
   }
 })
