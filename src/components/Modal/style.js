@@ -9,6 +9,7 @@ export default StyleSheet.create({
 		display: "flex",
 		justifyContent: "center",
 		alignItems: "center",
+		flex: 1,
 	},
 	outside: {
 		height: "100%",
@@ -17,6 +18,8 @@ export default StyleSheet.create({
 	},
 	inside: {
 		position: "absolute",
-		backgroundColor: COLORS.ModalContentBackground,
+		display: "flex",
+		height: "100%",
+		
 	},
 });
