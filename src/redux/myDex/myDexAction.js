@@ -1,15 +1,17 @@
-import * as actionType from "./myDexType";
+import actionType from "./myDexType";
 
-export const add = (card) => {
+const add = (card) => {
 	return {
 		type: actionType.Add,
 		payload: card,
 	};
 };
 
-export const remove = (id) => {
+const remove = (id) => {
 	return {
 		type: actionType.Remove,
 		payload: id,
 	};
 };
+
+export default { add, remove };

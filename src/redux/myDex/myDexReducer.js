@@ -1,4 +1,4 @@
-import * as actionType from "./myDexType";
+import actionType from "./myDexType";
 
 const initState = {
 	myDex: [],

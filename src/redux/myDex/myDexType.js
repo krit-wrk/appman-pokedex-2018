@@ -1,2 +1,4 @@
-export const Add = "myDex/add";
-export const Remove = "myDex/remove";
+const Add = "myDex/add";
+const Remove = "myDex/remove";
+
+export default { Add, Remove };
