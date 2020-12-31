@@ -1,6 +1,6 @@
 import myDexAction from "./myDexAction";
 import myDexReducer from "./myDexReducer";
-describe("MyDexStore", () => {
+describe("myDexStore", () => {
 	it("init ok", () => {
 		expect(myDexReducer(undefined, {})).toEqual({ myDex: [] });
 	});
