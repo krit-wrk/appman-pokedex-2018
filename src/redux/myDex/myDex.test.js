@@ -59,4 +59,12 @@ describe("myDexStore", () => {
 		expect(newState.myDex.length).toEqual(0);
 		expect(newState.myDexDisplay.length).toEqual(0);
 	});
+	it("reset ok", () => {
+		const state = myDexReducer(undefined, myDexAction.add(getMockData()));
+		expect(state.myDex.length).toEqual(1);
+		expect(state.myDexDisplay.length).toEqual(1);
+		const newState = myDexReducer(state, myDexAction.reset());
+		expect(newState.myDex.length).toEqual(0);
+		expect(newState.myDexDisplay.length).toEqual(0);
+	});
 });

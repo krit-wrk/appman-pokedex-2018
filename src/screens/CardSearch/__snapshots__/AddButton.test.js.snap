@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddButton renders without crashing 1`] = `
+<div>
+  <div
+    class="addButton_5gyw2"
+  >
+    Add
+  </div>
+</div>
+`;

@@ -14,4 +14,10 @@ const remove = (id) => {
 	};
 };
 
-export default { add, remove };
+const reset = () => {
+	return {
+		type: actionType.Reset,
+	};
+};
+
+export default { add, remove, reset };

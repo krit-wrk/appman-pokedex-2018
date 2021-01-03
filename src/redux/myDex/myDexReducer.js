@@ -16,11 +16,15 @@ const reducer = (state = initState, { type, payload }) => {
 					myDexDisplay: [...state.myDexDisplay, displayData],
 				};
 			}
-
 		case actionType.Remove:
 			return {
 				myDex: state.myDex.filter((d) => d.id !== payload),
 				myDexDisplay: state.myDexDisplay.filter((d) => d.id !== payload),
+			};
+		case actionType.Reset:
+			return {
+				myDex: [],
+				myDexDisplay: [],
 			};
 		default:
 			return state;

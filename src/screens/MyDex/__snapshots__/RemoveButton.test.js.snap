@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RemoveButton renders without crashing 1`] = `
+<div>
+  <div
+    class="removeButton_5gyw2"
+  >
+    X
+  </div>
+</div>
+`;
