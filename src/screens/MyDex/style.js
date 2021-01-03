@@ -14,15 +14,15 @@ export default StyleSheet.create({
 	},
 	dexContainer: {
 		display: "flex",
+		flex: 1,
 		flexWrap: "wrap",
 		flexDirection: "row",
-		justifyContent: "center",
 		overflowX: "scroll",
 	},
 	footer: {
 		display: "flex",
 		flexDirection: "row",
-		flex: 1,
+		// flex: 1,
 		height: "60px",
 		width: "100%",
 		bottom: 0,
@@ -45,5 +45,11 @@ export default StyleSheet.create({
 	card: {
 		width: "45%",
 		margin: "16px",
+	},
+
+	removeButton: {
+		textAlign: "center",
+		fontSize: "50px",
+		color: COLORS.AddButton,
 	},
 });

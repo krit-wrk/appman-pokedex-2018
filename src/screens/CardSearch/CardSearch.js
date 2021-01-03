@@ -28,9 +28,10 @@ const CardSearch = () => {
 
 	const addToMyDex = useCallback(
 		(card) => {
-			dispatch(myDexAction.add(card));
+			const data = cardList.find((d) => d.id === card.id);
+			dispatch(myDexAction.add(data));
 		},
-		[dispatch],
+		[dispatch, cardList],
 	);
 
 	const searchCard = useCallback(async (query) => {
@@ -70,16 +71,12 @@ const CardSearch = () => {
 
 	const list = useMemo(() => {
 		return cardListDisplay.map((c) => (
-			<div className={css(style.card)}>
-				<Card
-					key={c.id}
-					{...c}
-					btn={<AddButton onClick={() => addToMyDex(c)} />}
-				/>
+			<div key={c.id} className={css(style.card)}>
+				<Card {...c} btn={<AddButton onClick={() => addToMyDex(c)} />} />
 			</div>
 		));
 	}, [cardListDisplay, addToMyDex]);
-	
+
 	return (
 		<div className={css(style.container)}>
 			<div className={css(style.titleContainer)}>

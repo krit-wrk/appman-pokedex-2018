@@ -7,7 +7,7 @@ const { cards } = require("./../mock/cards.json");
 
 app.use(cors());
 app.use(function (req, res, next) {
-	setTimeout(next, 2000);
+	setTimeout(next, 1000);
 });
 
 app.get("/api/cards", (req, res) => {

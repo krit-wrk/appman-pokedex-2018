@@ -13,7 +13,7 @@ const reducer = (state = initState, { type, payload }) => {
 				const displayData = mapCardDisplayData(payload);
 				return {
 					myDex: [...state.myDex, payload],
-					myDexDisplay: [...state.myDex, displayData],
+					myDexDisplay: [...state.myDexDisplay, displayData],
 				};
 			}
 

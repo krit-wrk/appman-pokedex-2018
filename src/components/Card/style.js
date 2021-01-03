@@ -23,7 +23,7 @@ export default StyleSheet.create({
 	},
 
 	name: {
-		fontSize: "40px",
+		fontSize: "35px",
 		fontFamily: "Gaegu",
 	},
 	titleContainer: {
@@ -54,11 +54,13 @@ export default StyleSheet.create({
 	cuteContainer: {
 		display: "flex",
 		flexDirection: "row",
+		flexWrap: "wrap",
 		flex: 1,
 		alignItems: "center",
+		height: "35px",
 	},
 	cuteImage: {
-		width: "50px",
+		width: "35px",
 		padding: "2px",
 	},
 });

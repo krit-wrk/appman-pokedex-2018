@@ -4,7 +4,7 @@ export default StyleSheet.create({
 	container: {
 		display: "flex",
 		width: "900px",
-		padding: "32px",
+		margin: "32px",
 		flex: 1,
 		flexDirection: "column",
 		backgroundColor: COLORS.ModalContentBackground,
