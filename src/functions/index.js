@@ -1,1 +1,2 @@
-export * from "./calculateLevel/calculateLevel";
+import * as calculateLevel from "./calculateLevel/calculateLevel";
+export { calculateLevel };

@@ -4,9 +4,11 @@ describe("calculateLevel", () => {
 	it("calHpLevel 120 ok", () => {
 		expect(cal.calHpLevel({ hp: "120" })).toBe(100);
 	});
+
 	it("calHpLevel 60 ok", () => {
 		expect(cal.calHpLevel({ hp: "60" })).toBe(0);
 	});
+
 	it("calHpLevel other ok", () => {
 		expect(cal.calHpLevel({ hp: "other" })).toBe(0);
 	});
@@ -22,6 +24,7 @@ describe("calculateLevel", () => {
 			}),
 		).toBe(100);
 	});
+
 	it("calSrtLevel 2 ok", () => {
 		expect(
 			cal.calSrtLevel({
@@ -32,6 +35,7 @@ describe("calculateLevel", () => {
 			}),
 		).toBe(100);
 	});
+
 	it("calSrtLevel 1 ok", () => {
 		expect(
 			cal.calSrtLevel({
@@ -39,6 +43,7 @@ describe("calculateLevel", () => {
 			}),
 		).toBe(50);
 	});
+
 	it("calSrtLevel empty ok", () => {
 		expect(cal.calSrtLevel({})).toBe(0);
 	});
@@ -46,6 +51,7 @@ describe("calculateLevel", () => {
 	it("calWeakLevel empty ok", () => {
 		expect(cal.calWeakLevel({})).toBe(0);
 	});
+
 	it("calWeakLevel 1 ok", () => {
 		expect(
 			cal.calWeakLevel({
@@ -53,6 +59,7 @@ describe("calculateLevel", () => {
 			}),
 		).toBe(100);
 	});
+
 	it("calWeakLevel 2 ok", () => {
 		expect(
 			cal.calWeakLevel({
@@ -60,9 +67,11 @@ describe("calculateLevel", () => {
 			}),
 		).toBe(100);
 	});
+
 	it("calDmgLevel empty ok", () => {
 		expect(cal.calDmgLevel({})).toBe(0);
 	});
+
 	it("calDmgLevel 3 ok", () => {
 		expect(
 			cal.calDmgLevel({
@@ -74,6 +83,7 @@ describe("calculateLevel", () => {
 			}),
 		).toBe(140);
 	});
+
 	it("calHpyLevel ok", () => {
 		expect(
 			cal.calHpyLevel({

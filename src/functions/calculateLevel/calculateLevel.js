@@ -10,6 +10,7 @@ export const calSrtLevel = (card) => {
 	if (atkValue >= 100) return 100;
 	else return atkValue;
 };
+
 export const calWeakLevel = (card) => {
 	const weaknesses = card.weaknesses || [];
 	const weakLength = weaknesses.length;
@@ -17,6 +18,7 @@ export const calWeakLevel = (card) => {
 	if (weakValue >= 100) return 100;
 	else return weakValue;
 };
+
 export const calDmgLevel = (card) => {
 	const attacks = card.attacks || [];
 	return attacks.reduce(
