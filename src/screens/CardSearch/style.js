@@ -4,7 +4,7 @@ export default StyleSheet.create({
 	container: {
 		display: "flex",
 		width: "900px",
-		margin: "32px",
+		padding: "32px",
 		flex: 1,
 		flexDirection: "column",
 		backgroundColor: COLORS.ModalContentBackground,
@@ -36,8 +36,27 @@ export default StyleSheet.create({
 		overflowX: "scroll",
 		alignItems: "center",
 	},
+	EmptyContainer: {
+		flex: 1,
+		display: "flex",
+		flexDirection: "column",
+		justifyContent: "center",
+		alignIems: "center",
+	},
+	EmptyText: {
+		textAlign: "center",
+		fontSize: "50px",
+		fontFamily: "Gaegu",
+		color: COLORS.EmptyTextColor,
+	},
 	card: {
 		width: "95%",
 		padding: "16px",
+	},
+
+	addButton: {
+		textAlign: "center",
+		fontSize: "50px",
+		color: COLORS.AddButton,
 	},
 });

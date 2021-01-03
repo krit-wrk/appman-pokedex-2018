@@ -1,36 +1,114 @@
-import React, { useMemo } from "react";
+import React, {
+	useCallback,
+	useEffect,
+	useMemo,
+	useRef,
+	useState,
+} from "react";
+import _ from "lodash";
+import axios from "axios";
+import { APIS } from "./../../constants";
 import { Card } from "../../components";
 import style from "./style";
 import { css } from "aphrodite";
-import { COLORS } from "../../constants";
 import search from "./../../assets/search.png";
+import { mapCardDisplayData } from "../../functions";
+import { AddButton } from "./AddButton";
+import { useDispatch, useSelector } from "react-redux";
+import { myDexAction } from "../../redux";
+
 const CardSearch = () => {
-	const list = useMemo(() => {
-		let l = [];
-		for (let i = 0; i < 100; i++) {
-			l.push(
-				<div className={css(style.card)}>
-					<Card
-						name="Deoxys ex"
-						happy={3}
-						hp={30}
-						image={"https://images.pokemontcg.io/ex8/98.png"}
-						str={40}
-						weak={90}
-					/>
-				</div>,
-			);
+	const dispatch = useDispatch();
+	const { myDex } = useSelector((s) => s.myDex);
+	const [searchValue, setSearchValue] = useState("");
+	const [isLoading, setIsLoading] = useState(true);
+	const [isEmpty, setIsEmpty] = useState(false);
+	const [cardList, setCardList] = useState([]);
+	const [cardListDisplay, setCardListDisplay] = useState([]);
+
+	const addToMyDex = useCallback(
+		(card) => {
+			dispatch(myDexAction.add(card));
+		},
+		[dispatch],
+	);
+
+	const searchCard = useCallback(async (query) => {
+		setIsLoading(true);
+		setCardList([]);
+		setCardListDisplay([]);
+		try {
+			const res = await axios.get(`${APIS.cards}?query=${query}`);
+			setCardList(res.data.cards);
+		} catch (ex) {
+			console.error("searchCard Error", ex);
+		} finally {
+			setIsLoading(false);
 		}
-		return l;
 	}, []);
 
+	const debounceSearchCard = useCallback(_.debounce(searchCard, 250), [
+		searchCard,
+	]);
+
+	useEffect(() => {
+		debounceSearchCard(searchValue);
+	}, [searchValue, debounceSearchCard]);
+
+	useEffect(() => {
+		if (cardList.length > 0) {
+			const removedup = cardList.filter(
+				(c) => !myDex.find((m) => m.id === c.id),
+			);
+			setCardListDisplay(removedup.map(mapCardDisplayData));
+			setIsEmpty(false);
+		} else {
+			setCardListDisplay([]);
+			setIsEmpty(true);
+		}
+	}, [cardList, myDex]);
+
+	const list = useMemo(() => {
+		return cardListDisplay.map((c) => (
+			<div className={css(style.card)}>
+				<Card
+					key={c.id}
+					{...c}
+					btn={<AddButton onClick={() => addToMyDex(c)} />}
+				/>
+			</div>
+		));
+	}, [cardListDisplay, addToMyDex]);
+	
 	return (
 		<div className={css(style.container)}>
 			<div className={css(style.titleContainer)}>
-				<input placeholder="Find pokemon" className={css(style.seacrhInput)} />
-				<img src={search} alt="search" className={css(style.seacrhImg)} />
+				<input
+					placeholder="Find pokemon"
+					className={css(style.seacrhInput)}
+					value={searchValue}
+					onChange={({ target: { value } }) => setSearchValue(value)}
+				/>
+				<img
+					src={search}
+					alt="search"
+					className={css(style.seacrhImg)}
+					onClick={() => searchCard(searchValue)}
+				/>
 			</div>
-			<div className={css(style.cardListContainer)}>{list}</div>
+			{isLoading && (
+				<div className={css(style.EmptyContainer)}>
+					<div className={css(style.EmptyText)}>Searching...</div>
+				</div>
+			)}
+			{!isLoading && isEmpty && (
+				<div className={css(style.EmptyContainer)}>
+					<div className={css(style.EmptyText)}>No search results found</div>
+				</div>
+			)}
+			{!isLoading && !isEmpty && (
+				<div className={css(style.cardListContainer)}>{list}</div>
+			)}
 		</div>
 	);
 };

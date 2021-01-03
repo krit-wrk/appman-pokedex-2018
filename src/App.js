@@ -1,12 +1,15 @@
 import React from "react";
-import { MyDex ,CardSearch} from "./screens";
+import { Provider } from "react-redux";
+import { MyDex } from "./screens";
+import { store } from "./redux";
 import "./app.css";
 const App = () => {
 	return (
-		<div className="app">
-			{/* <CardSearch /> */}
-			<MyDex />
-		</div>
+		<Provider store={store}>
+			<div className="app">
+				<MyDex />
+			</div>
+		</Provider>
 	);
 };
 

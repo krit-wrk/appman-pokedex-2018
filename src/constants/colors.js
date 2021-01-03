@@ -25,4 +25,5 @@ export const COLORS = {
 	ModalContentBackground: "#ffffff",
 	ModalContentBoxShadow: "#474444",
 	ModalOutside: "#000000a3",
+	EmptyTextColor: "#c4c4c4",
 };

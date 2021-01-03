@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import style from "./style";
 import { css } from "aphrodite";
 

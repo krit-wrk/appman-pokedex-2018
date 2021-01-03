@@ -23,7 +23,7 @@ describe("myDexStore", () => {
 
 	it("add ok", () => {
 		const data = getMockData();
-		const expextData = {
+		const expectData = {
 			myDex: [data],
 			myDexDisplay: [
 				{
@@ -38,7 +38,7 @@ describe("myDexStore", () => {
 			],
 		};
 		expect(myDexReducer(undefined, myDexAction.add(getMockData()))).toEqual(
-			expextData,
+			expectData,
 		);
 	});
 

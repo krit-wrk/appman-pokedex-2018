@@ -26,6 +26,14 @@ export default StyleSheet.create({
 		fontSize: "40px",
 		fontFamily: "Gaegu",
 	},
+	titleContainer: {
+		display: "flex",
+		flex: 1,
+		flexDirection: "row",
+		justifyContent: "space-between",
+		alignItems: "center",
+		height: "50px",
+	},
 
 	descContainer: {
 		display: "flex",

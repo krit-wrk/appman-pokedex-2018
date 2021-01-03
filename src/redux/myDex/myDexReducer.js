@@ -1,5 +1,5 @@
 import actionType from "./myDexType";
-import { calculateLevel } from "./../../functions";
+import { mapCardDisplayData } from "./../../functions";
 const initState = {
 	myDex: [],
 	myDexDisplay: [],
@@ -10,15 +10,7 @@ const reducer = (state = initState, { type, payload }) => {
 		case actionType.Add:
 			if (state.myDex.find((d) => d.id === payload.id)) return state;
 			else {
-				const displayData = {
-					id: payload.id,
-					image: payload.imageUrl,
-					name: payload.name,
-					hp: calculateLevel.calHpLevel(payload),
-					str: calculateLevel.calSrtLevel(payload),
-					weak: calculateLevel.calWeakLevel(payload),
-					happy: calculateLevel.calHpyLevel(payload),
-				};
+				const displayData = mapCardDisplayData(payload);
 				return {
 					myDex: [...state.myDex, payload],
 					myDexDisplay: [...state.myDex, displayData],
