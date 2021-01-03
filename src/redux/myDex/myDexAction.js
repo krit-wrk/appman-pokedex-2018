@@ -20,4 +20,6 @@ const reset = () => {
 	};
 };
 
-export default { add, remove, reset };
+const actions =  { add, remove, reset }
+
+export default actions;

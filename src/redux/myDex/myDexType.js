@@ -1,4 +1,5 @@
 const Add = "myDex/add";
 const Remove = "myDex/remove";
 const Reset = "myDex/reset";
-export default { Add, Remove, Reset };
+const actionType = { Add, Remove, Reset }
+export default actionType;

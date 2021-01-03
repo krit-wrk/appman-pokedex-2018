@@ -1,8 +1,7 @@
 import React from "react";
 import { Provider } from "react-redux";
-import { render, fireEvent, screen, waitFor } from "@testing-library/react";
+import { render, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import axios from "axios";
 import { MyDex } from "./MyDex";
 import { StyleSheetTestUtils } from "aphrodite";
 import { store, myDexAction } from "../../redux";
@@ -88,5 +87,17 @@ describe("MyDex", () => {
 		expect(container).toMatchSnapshot();
 		expect(store.getState().myDex.myDex.length).toEqual(0);
 		expect(store.getState().myDex.myDexDisplay.length).toEqual(0);
+	});
+	it("open close modal ok", () => {
+		const { getByText, queryByTestId, getByTestId } = render(
+			<Provider store={store}>
+				<MyDex />
+			</Provider>,
+		);
+		fireEvent.click(getByText("+"));
+		expect(getByTestId("outsideModal")).toBeInTheDocument();
+		const closebtn = queryByTestId("outsideModal");
+		fireEvent.click(closebtn);
+		expect(queryByTestId("outsideModal")).not.toBeInTheDocument();
 	});
 });

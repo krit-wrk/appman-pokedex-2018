@@ -151,4 +151,61 @@ describe("CardSearch", () => {
 		expect(store.getState().myDex.myDex.length).toEqual(1);
 		expect(store.getState().myDex.myDexDisplay.length).toEqual(1);
 	});
+
+	it("search ok", async () => {
+		const fn = jest.spyOn(axios, "get").mockResolvedValue({
+			data: getMockData(),
+		});
+
+		const { getByText, getByPlaceholderText } = render(
+			<Provider store={store}>
+				<CardSearch />
+			</Provider>,
+		);
+
+		await waitFor(async () =>
+			expect(getByText("DEOXYS EX")).toBeInTheDocument(),
+		);
+		fireEvent.change(getByPlaceholderText("Find pokemon"), {
+			target: { value: "123" },
+		});
+		await waitFor(async () =>
+			expect(getByText("Searching...")).toBeInTheDocument(),
+		);
+		expect(fn).toHaveBeenCalled();
+	});
+	it("search btn ok", async () => {
+		const fn = jest.spyOn(axios, "get").mockResolvedValue({
+			data: getMockData(),
+		});
+
+		const { getByText, getByAltText } = render(
+			<Provider store={store}>
+				<CardSearch />
+			</Provider>,
+		);
+		await waitFor(async () =>
+			expect(getByText("DEOXYS EX")).toBeInTheDocument(),
+		);
+		fireEvent.click(getByAltText("search"));
+		await waitFor(async () =>
+			expect(getByText("Searching...")).toBeInTheDocument(),
+		);
+		expect(fn).toHaveBeenCalled();
+	});
+	it("search error ok", async () => {
+		const fn = jest.spyOn(axios, "get").mockRejectedValue();
+		const log = jest.spyOn(console, "error").mockImplementation(() => {});
+
+		const { getByAltText } = render(
+			<Provider store={store}>
+				<CardSearch />
+			</Provider>,
+		);
+		fireEvent.click(getByAltText("search"));
+		expect(fn).toHaveBeenCalled();
+		await waitFor(() => {
+			expect(log).toHaveBeenCalled();
+		});
+	});
 });

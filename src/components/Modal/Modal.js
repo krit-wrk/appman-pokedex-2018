@@ -6,7 +6,11 @@ const Modal = ({ isOpen, onClose, children }) => {
 	if (isOpen)
 		return (
 			<div className={css(style.container)}>
-				<div className={css(style.outside)} onClick={onClose} />
+				<div
+					className={css(style.outside)}
+					data-testid="outsideModal"
+					onClick={onClose}
+				/>
 				<div className={css(style.inside)}> {children}</div>
 			</div>
 		);
