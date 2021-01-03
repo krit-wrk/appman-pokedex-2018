@@ -20,7 +20,9 @@ const Card = ({ image, name, hp, str, weak, happy, btn }) => {
 			className={css(style.container)}
 			onMouseEnter={() => setIsShown(true)}
 			onMouseLeave={() => setIsShown(false)}>
-			<img className={css(style.image)} src={image} alt={name} />
+			<div className={css(style.imageContainer)}>
+				<img className={css(style.image)} src={image} alt={name} />
+			</div>
 			<div className={css(style.desc)}>
 				<div className={css(style.titleContainer)}>
 					<div className={css(style.name)}>{name.toUpperCase()}</div>

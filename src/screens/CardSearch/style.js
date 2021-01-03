@@ -56,7 +56,7 @@ export default StyleSheet.create({
 
 	addButton: {
 		textAlign: "center",
-		fontSize: "50px",
+		fontSize: "25px",
 		color: COLORS.AddButton,
 	},
 });

@@ -11,10 +11,17 @@ export default StyleSheet.create({
 		":hover": {
 			boxShadow: `1px 1px 10px 1px ${COLORS.CardShadowHover}`,
 		},
+		alignItems: "center",
 	},
-
+	imageContainer: {
+		display: "flex",
+		justifyContent:'center',
+		width: "130px",
+		padding: "8px",
+	},
 	image: {
-		width: "150px",
+		maxWidth: "100%",
+		maxHeight: "100%",
 	},
 	desc: {
 		flex: 1,
@@ -23,7 +30,7 @@ export default StyleSheet.create({
 	},
 
 	name: {
-		fontSize: "35px",
+		fontSize: "30px",
 		fontFamily: "Gaegu",
 	},
 	titleContainer: {
@@ -42,7 +49,7 @@ export default StyleSheet.create({
 		alignItems: "center",
 	},
 	descText: {
-		fontSize: "25px",
+		fontSize: "20px",
 		width: "100px",
 	},
 	descBar: {

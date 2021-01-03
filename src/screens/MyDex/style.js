@@ -18,6 +18,7 @@ export default StyleSheet.create({
 		flexWrap: "wrap",
 		flexDirection: "row",
 		overflowX: "scroll",
+		alignContent: "flex-start",
 	},
 	footer: {
 		display: "flex",
@@ -49,7 +50,7 @@ export default StyleSheet.create({
 
 	removeButton: {
 		textAlign: "center",
-		fontSize: "50px",
+		fontSize: "25px",
 		color: COLORS.AddButton,
 	},
 });
