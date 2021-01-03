@@ -1,0 +1,232 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MyDex remove ok 1`] = `
+<div>
+  <div
+    class="container_107ffsm"
+  >
+    <div
+      class="titleContainer_5agzlf"
+    >
+      My Pokedex
+    </div>
+    <div
+      class="dexContainer_16xdx4s"
+    />
+    <div
+      class="footer_ciqk7e"
+    >
+      <div
+        class="add_x41nhl"
+      >
+        +
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MyDex remove ok 2`] = `
+<div>
+  <div
+    class="container_107ffsm"
+  >
+    <div
+      class="titleContainer_5agzlf"
+    >
+      My Pokedex
+    </div>
+    <div
+      class="dexContainer_16xdx4s"
+    >
+      <div
+        class="card_1fxyoak"
+      >
+        <div
+          class="container_b4ahsr"
+        >
+          <div
+            class="imageContainer_1g6vvub"
+          >
+            <img
+              alt="Deoxys ex"
+              class="image_5hddva"
+              src="https://images.pokemontcg.io/ex8/98.png"
+            />
+          </div>
+          <div
+            class="desc_19c633u"
+          >
+            <div
+              class="titleContainer_1ryugy2"
+            >
+              <div
+                class="name_4p276u"
+              >
+                DEOXYS EX
+              </div>
+              <div>
+                <div
+                  class="removeButton_5gyw2"
+                >
+                  X
+                </div>
+              </div>
+            </div>
+            <div
+              class="descContainer_14nb90c"
+            >
+              <div
+                class="descText_1r7w1yk"
+              >
+                HP
+              </div>
+              <div
+                class="descBar_2jj7wg"
+              >
+                <div
+                  class="container_tze1ke"
+                >
+                  <div
+                    class="bar_1o8e29j-o_O-bar_zdxht7"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="descContainer_14nb90c"
+            >
+              <div
+                class="descText_1r7w1yk"
+              >
+                STR
+              </div>
+              <div
+                class="descBar_2jj7wg"
+              >
+                <div
+                  class="container_tze1ke"
+                >
+                  <div
+                    class="bar_1o8e29j-o_O-bar_1hfu0v"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="descContainer_14nb90c"
+            >
+              <div
+                class="descText_1r7w1yk"
+              >
+                WEAK
+              </div>
+              <div
+                class="descBar_2jj7wg"
+              >
+                <div
+                  class="container_tze1ke"
+                >
+                  <div
+                    class="bar_1o8e29j-o_O-bar_zdxht7"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="cuteContainer_zz3svu"
+            >
+              <img
+                alt="cute"
+                class="cuteImage_1pmj90s"
+                src="cute.png"
+              />
+              <img
+                alt="cute"
+                class="cuteImage_1pmj90s"
+                src="cute.png"
+              />
+              <img
+                alt="cute"
+                class="cuteImage_1pmj90s"
+                src="cute.png"
+              />
+              <img
+                alt="cute"
+                class="cuteImage_1pmj90s"
+                src="cute.png"
+              />
+              <img
+                alt="cute"
+                class="cuteImage_1pmj90s"
+                src="cute.png"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="footer_ciqk7e"
+    >
+      <div
+        class="add_x41nhl"
+      >
+        +
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MyDex remove ok 3`] = `
+<div>
+  <div
+    class="container_107ffsm"
+  >
+    <div
+      class="titleContainer_5agzlf"
+    >
+      My Pokedex
+    </div>
+    <div
+      class="dexContainer_16xdx4s"
+    />
+    <div
+      class="footer_ciqk7e"
+    >
+      <div
+        class="add_x41nhl"
+      >
+        +
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MyDex renders without crashing 1`] = `
+<div>
+  <div
+    class="container_107ffsm"
+  >
+    <div
+      class="titleContainer_5agzlf"
+    >
+      My Pokedex
+    </div>
+    <div
+      class="dexContainer_16xdx4s"
+    />
+    <div
+      class="footer_ciqk7e"
+    >
+      <div
+        class="add_x41nhl"
+      >
+        +
+      </div>
+    </div>
+  </div>
+</div>
+`;
